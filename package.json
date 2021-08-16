@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node ./src/index.js",
     "error": "TEST_ERROR=true node ./src/index.js",
-    "reset": "psql -U development -d scheduler_development < ./src/db/schema/create.sql && psql -U development -d scheduler_development < ./src/db/schema/development.sql"
+    "reset": "psql -d scheduler_development < ./src/db/schema/create.sql && psql -d scheduler_development < ./src/db/schema/development.sql",
+    "reset-test": "psql -d scheduler_test < ./src/db/schema/create.sql && psql -d scheduler_test < ./src/db/schema/test.sql",
+    "test:server": "NODE_ENV=test npm start"
   },
   "author": "",
   "license": "ISC",
